@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 18:05:52 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/10/08 21:03:55 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/10/11 18:07:40 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,58 +70,56 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (result);
 }
 
-char	*ft_pass_line(char *str)
+char	*ft_pass_line(char *str_c)
 {
 	int		i;
 	char	*line;
 
 	i = 0;
-	if (!str[i])
+	if (!str_c[i])
 		return (NULL);
-	while (str[i] && str[i] != '\n')
+	while (str_c[i] && str_c[i] != '\n')
 		i++;
 	line = (char *)malloc(sizeof(char) * (i + 2));
 	if (!line)
 		return (NULL);
 	i = 0;
-	while (str[i] && str[i] != '\n')
+	while (str_c[i] && str_c[i] != '\n')
 	{
-		line[i] = str[i];
+		line[i] = str_c[i];
 		i++;
 	}
-	if (str[i] == '\n')
+	if (str_c[i] == '\n')
 	{
-		line[i] = str[i];
+		line[i] = str_c[i];
 		i++;
 	}
 	line[i] = '\0';
 	return (line);
 }
 
-char	*ft_get_str(char *str)
+char	*ft_get_str(char *str_c)
 {
 	int		i;
 	int		j;
 	char	*result;
 
 	i = 0;
-	while (str[i] && str[i] != '\n')
+	while (str_c[i] && str_c[i] != '\n')
 		i++;
-	if (!str[i])
+	if (!str_c[i])
 	{
-		free(str);
+		free(str_c);
 		return (NULL);
 	}
-	result = (char *)malloc(sizeof(char) * (ft_strlen(str) - i + 1));
+	result = (char *)malloc(sizeof(char) * (ft_strlen(str_c) - i + 1));
 	if (!result)
 		return (NULL);
 	i++;
 	j = 0;
-	while (str[i])
-	{
-		result[j++] = str[i++];
-	}
+	while (str_c[i])
+		result[j++] = str_c[i++];
 	result[j] = '\0';
-	free(str);
+	free(str_c);
 	return (result);
 }

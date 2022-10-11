@@ -6,22 +6,22 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 18:05:28 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/10/08 21:08:35 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/10/11 18:06:17 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*get_str(int fd, char *result)
+char	*get_str(int fd, char *str_c)
 {
 	char	*buff;
 	ssize_t	n_bytes;
 
-	buff = malloc(sizeof(char) * BUFFER_SIZE + 1);
+	buff = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buff)
 		return (NULL);
 	n_bytes = 1;
-	while (!ft_strchr(result, '\n') && n_bytes != 0)
+	while (!ft_strchr(str_c, '\n') && n_bytes != 0)
 	{
 		n_bytes = read(fd, buff, BUFFER_SIZE);
 		if (n_bytes == -1)
@@ -30,23 +30,23 @@ char	*get_str(int fd, char *result)
 			return (NULL);
 		}
 		buff[n_bytes] = '\0';
-		result = ft_strjoin(result, buff);
+		str_c = ft_strjoin(str_c, buff);
 	}
 	free(buff);
-	return (result);
+	return (str_c);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*str;
+	static char	*str_c;
 	char		*line;
 
 	if ((fd < 0) || (BUFFER_SIZE <= 0))
 		return (NULL);
-	str = get_str(fd, str);
-	if (!str)
+	str_c = get_str(fd, str_c);
+	if (!str_c)
 		return (NULL);
-	line = ft_pass_line(str);
-	str = ft_get_str(str);
+	line = ft_pass_line(str_c);
+	str_c = ft_get_str(str_c);
 	return (line);
 }
