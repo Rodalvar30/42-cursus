@@ -6,71 +6,71 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 18:05:52 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/10/11 18:07:40 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/10/12 13:02:26 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strchr(const char *s, int c)
+size_t	ft_strlen(const char *s)
 {
-	int		i;
+	size_t	i;
 
 	i = 0;
+	if (!s)
+		return (0);
 	while (s[i] != '\0')
-	{
-		if (s[i] == (unsigned char)c)
-		{
-			return ((char *)s + i);
-		}
 		i++;
-	}
-	if ((unsigned char)c == s[i])
-	{
-		return ((char *)s + i);
-	}
-	return (0);
-}
-
-size_t	ft_strlen(const char *str)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
 	return (i);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strchr(const char *s, int c)
 {
-	char	*result;
+	int	i;
+
+	i = 0;
+	if (!s)
+		return (NULL);
+	if (c == '\0')
+		return ((char *)&s[ft_strlen(s)]);
+	while (s[i] != '\0')
+	{
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		i++;
+	}
+	return (NULL);
+}
+
+char	*ft_strjoin(char *s1, char *s2)
+{
+	char	*str;
 	int		i;
 	int		j;
 
-	result = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!result)
+	if (!s1)
+	{
+		s1 = (char *)malloc(1 * sizeof(char));
+		s1[0] = '\0';
+	}
+	if (!s1 || !s2)
 		return (NULL);
-	i = 0;
-	while (s1[i] != '\0')
-	{
-		result[i] = s1[i];
-		i++;
-	}
+	str = (char *)malloc(sizeof(char) * ((ft_strlen(s1) + ft_strlen(s2)) + 1));
+	if (!str)
+		return (NULL);
+	i = -1;
 	j = 0;
+	if (s1)
+		while (s1[++i] != '\0')
+			str[i] = s1[i];
 	while (s2[j] != '\0')
-	{
-		result[i] = s2[j];
-		i++;
-		j++;
-	}
-	result[i] = '\0';
-	return (result);
+		str[i++] = s2[j++];
+	str[ft_strlen(s1) + ft_strlen(s2)] = '\0';
+	free (s1);
+	return (str);
 }
 
-char	*ft_pass_line(char *str_c)
+char	*ft_get_line(char *str_c)
 {
 	int		i;
 	char	*line;
