@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 18:05:28 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/10/12 12:56:45 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/10/20 16:48:56 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ char	*get_read(int fd, char *str_c)
 		if (iter == -1)
 		{
 			free(buf);
+			free(str_c);
 			return (NULL);
 		}
 		buf[iter] = '\0';
@@ -38,15 +39,15 @@ char	*get_read(int fd, char *str_c)
 
 char	*get_next_line(int fd)
 {
-	static char	*str_c;
+	static char	*str_co;
 	char		*line;
 
 	if ((fd < 0) || (BUFFER_SIZE <= 0))
 		return (NULL);
-	str_c = get_read(fd, str_c);
-	if (!str_c)
+	str_co = get_read(fd, str_co);
+	if (!str_co)
 		return (NULL);
-	line = ft_get_line(str_c);
-	str_c = ft_get_str(str_c);
+	line = ft_get_line(str_co);
+	str_co = ft_get_str(str_co);
 	return (line);
 }
