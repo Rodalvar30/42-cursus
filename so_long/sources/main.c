@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 17:06:06 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/26 20:40:48 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/27 17:32:16 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ int	main(int argc, char **argv)
 		{
 			if (game.map)
 				free_map(game.map);
-			printf("Invalid Map\n");
+			printf("Error\nInvalid Map\n");
 			exit(1);
 		}
 	}
 	else
 	{
-		printf("\nInvalid Syntax\n");
+		printf("Error\nInvalid Syntax\n");
 		exit(1);
 	}
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:31:17 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/27 15:30:19 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/27 16:59:30 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 static void	img_init(t_game *game)
 {
 	game ->img_player = mlx_xpm_file_to_image(game -> mlx,
-			"sprites/player/kirby_d/kirby.xpm", &game -> img_width, &game -> img_height);
+			"sprites/player/kirby_d/kirby.xpm",
+			&game -> img_width, &game -> img_height);
 	game ->img_door = mlx_xpm_file_to_image(game -> mlx,
 			"sprites/map/door.xpm", &game -> img_width, &game -> img_height);
 	game ->img_wall = mlx_xpm_file_to_image(game -> mlx,
@@ -23,7 +24,8 @@ static void	img_init(t_game *game)
 	game ->img_tile = mlx_xpm_file_to_image(game -> mlx,
 			"sprites/map/suelo.xpm", &game -> img_width, &game -> img_height);
 	game ->img_enemies = mlx_xpm_file_to_image(game -> mlx,
-			"sprites/enemies/waddle.xpm", &game -> img_width, &game -> img_height);
+			"sprites/enemies/waddle.xpm", &game ->img_width,
+			&game -> img_height);
 	game ->img_item = mlx_xpm_file_to_image(game -> mlx,
 			"sprites/item/tomato.xpm", &game -> img_width, &game -> img_height);
 }
@@ -43,7 +45,8 @@ void	game_init(t_game *game)
 {
 	game->mlx = mlx_init();
 	size_window_init(game);
-	game->win = mlx_new_window(game->mlx, game->map_width, game->map_height, "so_long");
+	game->win = mlx_new_window(game->mlx,
+			game->map_width, game->map_height, "so_long");
 	game->moves = 0;
 	game->endgame = 0;
 	game->pos_player_a = 1;

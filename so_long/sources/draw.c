@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:46:02 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/27 16:09:25 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/27 18:24:40 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ static void	exit_draw(t_game *game, int x, int y)
 {
 	if (game->n_item == 0)
 	{
-		mlx_destroy_image(game->mlx, game->img_door);
 		game->img_door = mlx_xpm_file_to_image
-			(game->mlx, "sprites/map/salida.xpm", &game->img_width, &game->img_height);
+			(game->mlx, "sprites/map/salida.xpm",
+				&game->img_width, &game->img_height);
 	}
 	img_draw(game, game->img_door, x, y);
 }
@@ -70,7 +70,8 @@ void	tombstone_draw(t_game *game)
 	mlx_destroy_image(game->mlx, game->img_player);
 	mlx_clear_window(game->mlx, game->win);
 	game->img_player = mlx_xpm_file_to_image
-		(game->mlx, "sprites/map/muelto.xpm", &game->img_width, &game->img_height);
+		(game->mlx, "sprites/map/muelto.xpm",
+			&game->img_width, &game->img_height);
 	game->endgame = 1;
 	map_draw(game);
 }

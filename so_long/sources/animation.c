@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 16:45:02 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/27 16:05:45 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/27 17:02:02 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,20 @@ int	animation1(t_game *game)
 	mlx_destroy_image(game->mlx, game->img_player);
 	if (game->pos_player == 1)
 		game->img_player = mlx_xpm_file_to_image
-			(game->mlx, "sprites/player/kirby_d/kirby.xpm", &game->img_width, &game->img_height);
+			(game->mlx, "sprites/player/kirby_d/kirby.xpm",
+				&game->img_width, &game->img_height);
 	else if (game->pos_player == 2)
 	{
 		game->img_player = mlx_xpm_file_to_image
-			(game->mlx, "sprites/player/kirby_d/kirby.xpm", &game->img_width, &game->img_height);
+			(game->mlx, "sprites/player/kirby_d/kirby.xpm",
+				&game->img_width, &game->img_height);
 		game->pos_player = 0;
 	}
 	map_draw(game);
 	game->pos_player++;
 	return (0);
 }
+
 int	animation2(t_game *game)
 {
 	if (game->loop < 1000)
@@ -45,11 +48,13 @@ int	animation2(t_game *game)
 	mlx_destroy_image(game->mlx, game->img_player);
 	if (game->pos_player == 1)
 		game->img_player = mlx_xpm_file_to_image
-			(game->mlx, "sprites/player/kirby_a/kirby.xpm", &game->img_width, &game->img_height);
+			(game->mlx, "sprites/player/kirby_a/kirby.xpm",
+				&game->img_width, &game->img_height);
 	else if (game->pos_player == 2)
 	{
 		game->img_player = mlx_xpm_file_to_image
-			(game->mlx, "sprites/player/kirby_a/kirby.xpm", &game->img_width, &game->img_height);
+			(game->mlx, "sprites/player/kirby_a/kirby.xpm",
+				&game->img_width, &game->img_height);
 		game->pos_player = 0;
 	}
 	map_draw(game);
@@ -68,17 +73,20 @@ int	animation3(t_game *game)
 	mlx_destroy_image(game->mlx, game->img_player);
 	if (game->pos_player == 1)
 		game->img_player = mlx_xpm_file_to_image
-			(game->mlx, "sprites/player/kirby_s/kirby8.xpm", &game->img_width, &game->img_height);
+			(game->mlx, "sprites/player/kirby_s/kirby8.xpm",
+				&game->img_width, &game->img_height);
 	else if (game->pos_player == 2)
 	{
 		game->img_player = mlx_xpm_file_to_image
-			(game->mlx, "sprites/player/kirby_s/kirby8.xpm", &game->img_width, &game->img_height);
+			(game->mlx, "sprites/player/kirby_s/kirby8.xpm",
+				&game->img_width, &game->img_height);
 		game->pos_player = 0;
 	}
 	map_draw(game);
 	game->pos_player++;
 	return (0);
 }
+
 int	animation4(t_game *game)
 {
 	if (game->loop < 1000)
@@ -90,17 +98,20 @@ int	animation4(t_game *game)
 	mlx_destroy_image(game->mlx, game->img_player);
 	if (game->pos_player == 1)
 		game->img_player = mlx_xpm_file_to_image
-			(game->mlx, "sprites/player/kirby_w/kirby5.xpm", &game->img_width, &game->img_height);
+			(game->mlx, "sprites/player/kirby_w/kirby5.xpm",
+				&game->img_width, &game->img_height);
 	else if (game->pos_player == 2)
 	{
 		game->img_player = mlx_xpm_file_to_image
-			(game->mlx, "sprites/player/kirby_w/kirby5.xpm", &game->img_width, &game->img_height);
+			(game->mlx, "sprites/player/kirby_w/kirby5.xpm",
+				&game->img_width, &game->img_height);
 		game->pos_player = 0;
 	}
 	map_draw(game);
 	game->pos_player++;
 	return (0);
 }
+
 int	animation5(t_game *game)
 {
 	if (game->loop < 1000)
@@ -112,11 +123,13 @@ int	animation5(t_game *game)
 	mlx_destroy_image(game->mlx, game->img_player);
 	if (game->pos_player == 1)
 		game->img_player = mlx_xpm_file_to_image
-			(game->mlx, "sprites/map/muelto.xpm", &game->img_width, &game->img_height);
+			(game->mlx, "sprites/map/muelto.xpm",
+				&game->img_width, &game->img_height);
 	else if (game->pos_player == 2)
 	{
 		game->img_player = mlx_xpm_file_to_image
-			(game->mlx, "sprites/map/muelto.xpm", &game->img_width, &game->img_height);
+			(game->mlx, "sprites/map/muelto.xpm",
+				&game->img_width, &game->img_height);
 		game->pos_player = 0;
 	}
 	map_draw(game);
