@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 16:19:09 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/26 21:10:59 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/27 15:02:29 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ static void	player_update_image(char key, t_game *game)
 	mlx_destroy_image(game->mlx, game->img_player);
 	if (key == 'w')
 		game->img_player = mlx_xpm_file_to_image
-			(game->mlx, "sprites/player/kirby1.xpm", &game->img_width, &game->img_height);
+			(game->mlx, "sprites/player/kirby_w/kirby1.xpm", &game->img_width, &game->img_height);
 	else if (key == 's')
 		game->img_player = mlx_xpm_file_to_image
-			(game->mlx, "sprites/player/kirby6.xpm", &game->img_width, &game->img_height);
+			(game->mlx, "sprites/player/kirby_s/kirby1.xpm", &game->img_width, &game->img_height);
 	else if (key == 'd')
 		game->img_player = mlx_xpm_file_to_image
-			(game->mlx, "sprites/player/kirby7.xpm", &game->img_width, &game->img_height);
+			(game->mlx, "sprites/player/kirby_d/kirby1.xpm", &game->img_width, &game->img_height);
 	else if (key == 'a')
 		game->img_player = mlx_xpm_file_to_image
-			(game->mlx, "sprites/player/kirby8.xpm", &game->img_width, &game->img_height);
+			(game->mlx, "sprites/player/kirby_a/kirby1.xpm", &game->img_width, &game->img_height);
 }
 
 void	player_w(t_game *game)

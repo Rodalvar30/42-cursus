@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:59:12 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/26 17:48:25 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/27 15:03:20 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ void	count_moves(t_game *game)
 
 	str = ft_itoa(game -> moves);
 	mlx_string_put(game -> mlx, game -> win, 25, 20, 0xFFFFFF, "MOVES: ");
-	mlx_string_put(game -> mlx, game -> win, 70, 20, 0xFFFFFF, str);
+	mlx_string_put(game -> mlx, game -> win, 100, 20, 0xFFFFFF, str);
 }

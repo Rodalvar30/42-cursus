@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 21:08:13 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/26 20:54:32 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/27 16:06:01 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,15 @@ typedef struct s_game
 	int		y_player;
 	int		moves;
 	int		endgame;
-	int		pos_enemies;
 	int		pos_player;
+	int		pos_player_w;
+	int		pos_player_a;
+	int		pos_player_d;
+	int		pos_player_s;
+	int		loop_w;
+	int		loop_d;
+	int		loop_a;
+	int		loop_s;
 	int		loop;
 }	t_game;
 
@@ -60,8 +67,16 @@ void	player_s(t_game *game);
 void	player_d(t_game *game);
 void	player_a(t_game *game);
 void	img_draw(t_game *game, void *image, int x, int y);
-int		animation(t_game *game);
+int		animation_w(t_game *game);
+int		animation_s(t_game *game);
+int		animation_d(t_game *game);
+int		animation_a(t_game *game);
 void	tombstone_draw(t_game *game);
 int		map_checker(t_game *game);
+int	animation1(t_game *game);
+int	animation2(t_game *game);
+int	animation3(t_game *game);
+int	animation4(t_game *game);
+int	animation5(t_game *game);
 
 #endif
