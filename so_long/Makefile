@@ -1,4 +1,4 @@
-SRCS =  ./sources/draw.c ./sources/frame.c ./sources/free.c ./sources/gameplay.c ./sources/init.c  ./sources/map_check.c ./sources/moves.c ./sources/readmap.c  ./sources/animation.c ./sources/main.c
+SRCS =  ./sources/draw.c ./sources/frame.c ./sources/free.c ./sources/gameplay.c ./sources/init.c  ./sources/map_check.c ./sources/moves.c ./sources/readmap.c  ./sources/animation.c ./sources/main.c ./sources/animation_move.c ./sources/animation2.c ./sources/animation3.c
 
 MLX_FLAG = libmlx.dylib
 LIBFT = ./libraries/libft/libft.a

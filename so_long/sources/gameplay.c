@@ -6,13 +6,13 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 16:12:42 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/27 16:55:57 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/28 19:03:00 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void	game_events(int keycode, t_game *game)
+static void	game_wa(int keycode, t_game *game)
 {
 	if (keycode == 13)
 	{
@@ -34,7 +34,12 @@ static void	game_events(int keycode, t_game *game)
 			mlx_loop_hook(game->mlx, animation5, game);
 		printf("Se presiono la tecla S\n");
 	}
-	else if (keycode == 2)
+}
+
+static void	game_events(int keycode, t_game *game)
+{
+	game_wa(keycode, game);
+	if (keycode == 2)
 	{
 		game->x_player += 1;
 		player_d(game);

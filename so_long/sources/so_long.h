@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 21:08:13 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/27 16:06:01 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/28 16:07:47 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,10 @@ int		animation_d(t_game *game);
 int		animation_a(t_game *game);
 void	tombstone_draw(t_game *game);
 int		map_checker(t_game *game);
-int	animation1(t_game *game);
-int	animation2(t_game *game);
-int	animation3(t_game *game);
-int	animation4(t_game *game);
-int	animation5(t_game *game);
+int		animation1(t_game *game);
+int		animation2(t_game *game);
+int		animation3(t_game *game);
+int		animation4(t_game *game);
+int		animation5(t_game *game);
 
 #endif
