@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 16:19:09 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/28 18:42:48 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/30 16:29:43 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ void	player_w(t_game *game)
 	player_update_image('w', game);
 	if (game->map[game->y_player][game->x_player] == 'E' && game->n_item == 0)
 	{
-		mlx_clear_window(game->mlx, game->win);
 		game->map[game->y_player + 1][game->x_player] = '0';
 		game->moves++;
 		game->endgame = 2;
+		mlx_clear_window(game->mlx, game->win);
 		map_draw(game);
 	}
 	else if (game->map[game->y_player][game->x_player] == 'K')
@@ -56,7 +56,7 @@ void	player_w(t_game *game)
 		game->map[game->y_player][game->x_player] = 'P';
 		game->map[game->y_player + 1][game->x_player] = '0';
 		game->moves++;
-		mlx_clear_window(game -> mlx, game -> win);
+		mlx_clear_window(game->mlx, game->win);
 		map_draw(game);
 	}
 }
@@ -66,10 +66,10 @@ void	player_s(t_game *game)
 	player_update_image('s', game);
 	if (game->map[game->y_player][game->x_player] == 'E' && game->n_item == 0)
 	{
-		mlx_clear_window(game->mlx, game->win);
 		game->map[game->y_player - 1][game->x_player] = '0';
 		game->moves++;
 		game->endgame = 2;
+		mlx_clear_window(game->mlx, game->win);
 		map_draw(game);
 	}
 	else if (game->map[game->y_player][game->x_player] == 'K')
@@ -84,7 +84,7 @@ void	player_s(t_game *game)
 		game->map[game->y_player][game->x_player] = 'P';
 		game->map[game->y_player - 1][game->x_player] = '0';
 		game->moves++;
-		mlx_clear_window(game -> mlx, game -> win);
+		mlx_clear_window(game->mlx, game->win);
 		map_draw(game);
 	}
 }
@@ -94,10 +94,10 @@ void	player_d(t_game *game)
 	player_update_image('d', game);
 	if (game->map[game->y_player][game->x_player] == 'E' && game->n_item == 0)
 	{
-		mlx_clear_window(game->mlx, game->win);
 		game->map[game->y_player][game->x_player - 1] = '0';
 		game->moves++;
 		game->endgame = 2;
+		mlx_clear_window(game->mlx, game->win);
 		map_draw(game);
 	}
 	else if (game->map[game->y_player][game->x_player] == 'K')
@@ -112,7 +112,7 @@ void	player_d(t_game *game)
 		game->map[game->y_player][game->x_player] = 'P';
 		game->map[game->y_player][game->x_player - 1] = '0';
 		game->moves++;
-		mlx_clear_window(game -> mlx, game -> win);
+		mlx_clear_window(game->mlx, game->win);
 		map_draw(game);
 	}
 }
@@ -122,10 +122,10 @@ void	player_a(t_game *game)
 	player_update_image('a', game);
 	if (game->map[game->y_player][game->x_player] == 'E' && game->n_item == 0)
 	{
-		mlx_clear_window(game->mlx, game->win);
 		game->map[game->y_player][game->x_player + 1] = '0';
 		game->moves++;
 		game->endgame = 2;
+		mlx_clear_window(game->mlx, game->win);
 		map_draw(game);
 	}
 	else if (game->map[game->y_player][game->x_player] == 'K')
@@ -140,7 +140,7 @@ void	player_a(t_game *game)
 		game->map[game->y_player][game->x_player] = 'P';
 		game->map[game->y_player][game->x_player + 1] = '0';
 		game->moves++;
-		mlx_clear_window(game -> mlx, game -> win);
+		mlx_clear_window(game->mlx, game->win);
 		map_draw(game);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 17:06:52 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/26 20:40:20 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/30 16:40:00 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,8 @@ static int	is_validate(char **map)
 		while (map[i][j] != '\0')
 		{
 			if (map[i][j] != 'P' && map[i][j] != 'E' && map[i][j] != 'C'
-				&& map[i][j] != '0' && map[i][j] != '1' && map[i][j] != 'K')
+				&& map[i][j] != '0' && map[i][j] != '1' && map[i][j] != 'K'
+					&& map[i][j] != '2')
 				return (0);
 			j++;
 		}

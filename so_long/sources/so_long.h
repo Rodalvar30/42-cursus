@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 21:08:13 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/28 16:07:47 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/30 16:53:03 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_game
 	void	*img_enemies;
 	void	*img_item;
 	void	*img_door;
+	void	*img_wall2;
 	int		map_width;
 	int		map_height;
 	int		img_width;
@@ -78,5 +79,6 @@ int		animation2(t_game *game);
 int		animation3(t_game *game);
 int		animation4(t_game *game);
 int		animation5(t_game *game);
+void	easter_egg(t_game *game, int y, int x);
 
 #endif

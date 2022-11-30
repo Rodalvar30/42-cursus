@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:31:17 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/28 16:34:16 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/30 16:41:09 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,19 @@ static void	img_init(t_game *game)
 			&game -> img_height);
 	game ->img_item = mlx_xpm_file_to_image(game -> mlx,
 			"sprites/item/tomato.xpm", &game -> img_width, &game -> img_height);
+	game ->img_wall2 = mlx_xpm_file_to_image(game -> mlx,
+			"sprites/map/muro.xpm", &game -> img_width, &game -> img_height);
 }
 
 static void	size_window_init(t_game *game)
 {
 	int	i;
 
-	game->map_width = ft_strlen(game->map[0]) * 64;
+	game->map_width = ft_strlen(game->map[0]) * 63;
 	i = 0;
 	while (game->map[i] != (void *)0)
 		i++;
-	game->map_height = i * 64 + 64;
+	game->map_height = i * 63 + 63;
 }
 
 void	game_init(t_game *game)

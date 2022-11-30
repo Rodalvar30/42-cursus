@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 16:12:42 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/28 19:03:00 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/30 16:53:56 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,12 @@ void	gameplay(t_game *game)
 	mlx_hook(game->win, 2, 1L << 0, keypress, game);
 	mlx_hook(game->win, 17, 1L << 17, exit_game, game);
 	mlx_hook(game->win, 9, 1L << 21, map_draw, game);
+}
+
+void	easter_egg(t_game *game, int y, int x)
+{
+	if (game->map[y][x] == '2')
+		img_draw(game, game->img_wall2, x, y);
+	else if (game->map[y][x] == 'K')
+		img_draw(game, game->img_enemies, x, y);
 }

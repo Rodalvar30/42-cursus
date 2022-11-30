@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:46:02 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/28 16:05:10 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/30 16:54:05 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	img_draw(t_game *game, void *image, int x, int y)
 {
 	mlx_put_image_to_window
-		(game->mlx, game->win, image, x * 64, y * 64 + 64);
+		(game->mlx, game->win, image, x * 63, y * 63 + 63);
 }
 
 static void	player_draw(t_game *game, void *image, int x, int y)
@@ -57,8 +57,7 @@ int	map_draw(t_game *game)
 				img_draw(game, game->img_item, x, y);
 			else if (game->map[y][x] == 'E')
 				exit_draw(game, x, y);
-			else if (game->map[y][x] == 'K')
-				img_draw(game, game->img_enemies, x, y);
+			easter_egg(game, y, x);
 		}
 	}
 	count_moves(game);
@@ -67,8 +66,6 @@ int	map_draw(t_game *game)
 
 void	tombstone_draw(t_game *game)
 {
-	mlx_destroy_image(game->mlx, game->img_player);
-	mlx_clear_window(game->mlx, game->win);
 	game->img_player = mlx_xpm_file_to_image
 		(game->mlx, "sprites/map/muelto.xpm",
 			&game->img_width, &game->img_height);
