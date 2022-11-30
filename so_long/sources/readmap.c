@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:06:03 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/26 20:19:15 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/30 18:41:38 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ char	**read_map(char *path)
 	}
 	map = ft_split(holder_map, '\n');
 	free(holder_map);
+	free(line);
 	close(fd);
 	return (map);
 }

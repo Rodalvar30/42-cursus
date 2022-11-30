@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 17:06:52 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/30 16:40:00 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/30 18:00:22 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ static int	is_retangular(char **map)
 			return (0);
 		i++;
 	}
+	if ((size_t)i == ft_strlen(map[i - 1]))
+		return (0);
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 18:21:53 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/28 19:05:35 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/30 17:38:44 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,6 @@ static void	swap_aa(t_game *game)
 
 int	animation_a(t_game *game)
 {
-	if (game->loop_a < 1000)
-	{
-		game->loop_a++;
-		return (0);
-	}
 	game->loop_a = 0;
 	mlx_destroy_image(game->mlx, game->img_player);
 	swap_a1(game);

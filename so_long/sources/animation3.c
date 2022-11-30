@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 18:41:30 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/28 18:42:00 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/30 17:38:26 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,6 @@ static void	swap_dd(t_game *game)
 
 int	animation_d(t_game *game)
 {
-	if (game->loop_d < 1000)
-	{
-		game->loop_d++;
-		return (0);
-	}
-	game->loop_d = 0;
 	mlx_destroy_image(game->mlx, game->img_player);
 	swap_d(game);
 	swap_dd(game);
