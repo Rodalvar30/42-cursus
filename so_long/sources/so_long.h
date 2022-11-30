@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 21:08:13 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/30 16:53:03 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/30 20:45:53 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ typedef struct s_game
 	int		loop;
 }	t_game;
 
-void	free_map(char **map);
+void	free_map(t_game *game);
 char	**read_map(char *file);
 int		exit_game(t_game *game);
 void	game_init(t_game *game);

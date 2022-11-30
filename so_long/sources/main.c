@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 17:06:06 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/30 18:43:58 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/30 20:19:01 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,15 @@ static int	argv_checker(char *argv)
 	return (0);
 }
 
+void leaks(void)
+{
+	system("leaks so_long");
+}
+
 int	main(int argc, char **argv)
 {
 	t_game	game;
-
+	atexit(leaks);
 	if (argc == 2)
 	{
 		game.map = read_map(argv[1]);
@@ -40,17 +45,20 @@ int	main(int argc, char **argv)
 			game_init(&game);
 			gameplay(&game);
 			mlx_loop(game.mlx);
+			if (game.map)
+				free_map(&game);
 		}
 		else
 		{
 			if (game.map)
-				free_map(game.map);
+				free_map(&game);
 			printf("Error\nInvalid Map\n");
 			exit(1);
 		}
 	}
 	else
 	{
+		free_map(&game);
 		printf("Error\nInvalid Syntax\n");
 		exit(1);
 	}

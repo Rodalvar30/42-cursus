@@ -6,28 +6,29 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:23:25 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/28 19:03:19 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/30 20:19:00 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	free_map(char **map)
+void	free_map(t_game *game)
 {
 	int	i;
 
 	i = 0;
-	while (map[i] != (void *)0)
-	{
-		free(map[i]);
+	while (game->map[i])
+	{	
+		free(game->map[i]);
 		i++;
 	}
-	free(map);
+	free(game -> map);
 }
 
 int	exit_game(t_game *game)
 {
-	free_map(game->map);
+	printf("Adios\n");
+	printf("%p\n", game);
 	mlx_destroy_image(game->mlx, game->img_tile);
 	mlx_destroy_image(game->mlx, game->img_wall);
 	mlx_destroy_image(game->mlx, game->img_player);
@@ -36,6 +37,8 @@ int	exit_game(t_game *game)
 	mlx_destroy_image(game->mlx, game->img_enemies);
 	mlx_destroy_window(game->mlx, game->win);
 	free(game->mlx);
+	//if (game->map)
+	//	free_map(game);
 	exit(0);
 	return (0);
 }

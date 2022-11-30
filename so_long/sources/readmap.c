@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:06:03 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/30 18:41:38 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/11/30 20:33:37 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ char	**read_map(char *path)
 	fd = open(path, O_RDONLY);
 	if (fd == -1)
 		return (NULL);
-	holder_map = ft_strdup("");
-	holder = ft_strdup("");
+	holder_map = NULL;
 	while (1)
 	{
 		line = get_next_line(fd);
@@ -32,10 +31,10 @@ char	**read_map(char *path)
 			break ;
 		holder = holder_map;
 		holder_map = ft_strjoin(holder, line);
+		free(line);
 	}
 	map = ft_split(holder_map, '\n');
 	free(holder_map);
-	free(line);
 	close(fd);
 	return (map);
 }
