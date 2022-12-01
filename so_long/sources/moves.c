@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:59:12 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/30 15:53:15 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/12/01 19:48:56 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,5 @@ void	count_moves(t_game *game)
 		mlx_string_put(game -> mlx, game -> win,
 			(game -> map_width / 2) - 60, 40, 0xFFFFFF, "PRESS ESC to REPLAY");
 	}
+	//free(str);
 }

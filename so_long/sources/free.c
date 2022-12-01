@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:23:25 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/30 20:19:00 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/12/01 18:29:38 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ void	free_map(t_game *game)
 
 int	exit_game(t_game *game)
 {
-	printf("Adios\n");
-	printf("%p\n", game);
 	mlx_destroy_image(game->mlx, game->img_tile);
 	mlx_destroy_image(game->mlx, game->img_wall);
 	mlx_destroy_image(game->mlx, game->img_player);
@@ -37,8 +35,8 @@ int	exit_game(t_game *game)
 	mlx_destroy_image(game->mlx, game->img_enemies);
 	mlx_destroy_window(game->mlx, game->win);
 	free(game->mlx);
-	//if (game->map)
-	//	free_map(game);
+	if (game->map)
+		free_map(game);
 	exit(0);
 	return (0);
 }

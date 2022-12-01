@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 16:12:42 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/30 16:53:56 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/12/01 18:41:49 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	game_wa(int keycode, t_game *game)
 		mlx_loop_hook(game->mlx, animation4, game);
 		if (game ->endgame == 1)
 			mlx_loop_hook(game->mlx, animation5, game);
-		printf("Se presiono la tecla W\n");
+		write(1, "Se presiono la tecla W\n", 23);
 	}
 	else if (keycode == 1)
 	{
@@ -32,7 +32,7 @@ static void	game_wa(int keycode, t_game *game)
 		mlx_loop_hook(game->mlx, animation3, game);
 		if (game ->endgame == 1)
 			mlx_loop_hook(game->mlx, animation5, game);
-		printf("Se presiono la tecla S\n");
+		write(1, "Se presiono la tecla S\n", 23);
 	}
 }
 
@@ -47,7 +47,7 @@ static void	game_events(int keycode, t_game *game)
 		mlx_loop_hook(game->mlx, animation1, game);
 		if (game ->endgame == 1)
 			mlx_loop_hook(game->mlx, animation5, game);
-		printf("Se presiono la tecla D\n");
+		write(1, "Se presiono la tecla D\n", 23);
 	}
 	else if (keycode == 0)
 	{
@@ -57,7 +57,7 @@ static void	game_events(int keycode, t_game *game)
 		mlx_loop_hook(game->mlx, animation2, game);
 		if (game ->endgame == 1)
 			mlx_loop_hook(game->mlx, animation5, game);
-		printf("Se presiono la tecla A\n");
+		write(1, "Se presiono la tecla A\n", 23);
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 21:08:13 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/11/30 20:45:53 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/12/01 18:35:47 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "../libraries/mlx/mlx.h"
 # include <stdlib.h>
-# include <stdio.h>
 # include <unistd.h>
 # include <fcntl.h>
 # include "../libraries/libft/get_next_line.h"
