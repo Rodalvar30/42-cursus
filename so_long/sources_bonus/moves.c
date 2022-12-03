@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rodalvar <rodalvar@student.42.com>         +#+  +:+       +#+        */
+/*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:59:12 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/12/02 00:04:36 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/12/03 16:46:31 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	count_moves(t_game *game)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*get_read_str_concat(int fd, char *str_concat)
 {
@@ -27,6 +27,7 @@ char	*get_read_str_concat(int fd, char *str_concat)
 		if (iter == -1)
 		{
 			free(buf);
+			free(str_concat);
 			return (NULL);
 		}
 		buf[iter] = '\0';
@@ -38,15 +39,15 @@ char	*get_read_str_concat(int fd, char *str_concat)
 
 char	*get_next_line(int fd)
 {
-	static char	*str_concat;
+	static char	*str_concat[4096];
 	char		*line;
 
 	if ((fd < 0) || (BUFFER_SIZE <= 0))
 		return (NULL);
-	str_concat = get_read_str_concat(fd, str_concat);
-	if (!str_concat)
+	str_concat[fd] = get_read_str_concat(fd, str_concat[fd]);
+	if (!str_concat[fd])
 		return (NULL);
-	line = ft_get_line(str_concat);
-	str_concat = ft_new_str(str_concat);
+	line = ft_get_line(str_concat[fd]);
+	str_concat[fd] = ft_new_str(str_concat[fd]);
 	return (line);
 }

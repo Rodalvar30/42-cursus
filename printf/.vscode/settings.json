@@ -1,0 +1,8 @@
+{
+	"files.associations": {
+		"stdarg.h": "c",
+		"libft.h": "c",
+		"ratio": "c",
+		"ft_printf.h": "c"
+	}
+}

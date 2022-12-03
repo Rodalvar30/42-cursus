@@ -10,9 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
-//calculate the length of a string.
 size_t	ft_strlen(const char *s)
 {
 	size_t	i;
@@ -25,8 +24,6 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-/*locates the first instance of c in the string pointed to by s. 
-returns a pointer to the located character, or null if it does not exist*/
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
@@ -45,7 +42,6 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-// Returns a new string, formed by the concatenation of 's1' and 's2'.
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*str;

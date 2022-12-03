@@ -6,11 +6,11 @@
 /*   By: rodalvar <rodalvar@student.42.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 16:19:09 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/12/02 00:02:47 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/12/02 00:11:00 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 static void	player_update_image(char key, t_game *game)
 {
@@ -44,6 +44,8 @@ void	player_w(t_game *game)
 		mlx_clear_window(game->mlx, game->win);
 		map_draw(game);
 	}
+	else if (game->map[game->y_player][game->x_player] == 'K')
+		tombstone_draw(game);
 	else if (game->map[game->y_player][game->x_player] == '1'
 			|| game->map[game->y_player][game->x_player] == 'E')
 		game->y_player += 1;
@@ -70,6 +72,8 @@ void	player_s(t_game *game)
 		mlx_clear_window(game->mlx, game->win);
 		map_draw(game);
 	}
+	else if (game->map[game->y_player][game->x_player] == 'K')
+		tombstone_draw(game);
 	else if (game->map[game->y_player][game->x_player] == '1'
 			|| game->map[game->y_player][game->x_player] == 'E')
 		game->y_player -= 1;
@@ -96,6 +100,8 @@ void	player_d(t_game *game)
 		mlx_clear_window(game->mlx, game->win);
 		map_draw(game);
 	}
+	else if (game->map[game->y_player][game->x_player] == 'K')
+		tombstone_draw(game);
 	else if (game->map[game->y_player][game->x_player] == '1'
 			|| game->map[game->y_player][game->x_player] == 'E')
 		game->x_player -= 1;
@@ -122,6 +128,8 @@ void	player_a(t_game *game)
 		mlx_clear_window(game->mlx, game->win);
 		map_draw(game);
 	}
+	else if (game->map[game->y_player][game->x_player] == 'K')
+		tombstone_draw(game);
 	else if (game->map[game->y_player][game->x_player] == '1'
 			|| game->map[game->y_player][game->x_player] == 'E')
 		game->x_player += 1;

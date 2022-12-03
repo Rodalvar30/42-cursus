@@ -6,11 +6,11 @@
 /*   By: rodalvar <rodalvar@student.42.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 17:06:52 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/12/02 00:04:26 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/12/02 00:11:05 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 static int	is_retangular(char **map)
 {
@@ -98,7 +98,8 @@ static int	is_validate(char **map)
 		while (map[i][j] != '\0')
 		{
 			if (map[i][j] != 'P' && map[i][j] != 'E' && map[i][j] != 'C'
-				&& map[i][j] != '0' && map[i][j] != '1')
+				&& map[i][j] != '0' && map[i][j] != '1' && map[i][j] != 'K'
+					&& map[i][j] != '2')
 				return (0);
 			j++;
 		}

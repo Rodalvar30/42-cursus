@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: rodalvar <rodalvar@student.42.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:46:02 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/12/03 16:40:42 by rodalvar         ###   ########.fr       */
+/*   Updated: 2022/12/02 00:10:58 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	img_draw(t_game *game, void *image, int x, int y)
 {
@@ -57,8 +57,18 @@ int	map_draw(t_game *game)
 				img_draw(game, game->img_item, x, y);
 			else if (game->map[y][x] == 'E')
 				exit_draw(game, x, y);
+			easter_egg(game, y, x);
 		}
 	}
 	count_moves(game);
 	return (0);
+}
+
+void	tombstone_draw(t_game *game)
+{
+	game->img_player = mlx_xpm_file_to_image
+		(game->mlx, "sprites/map/muelto.xpm",
+			&game->img_width, &game->img_height);
+	game->endgame = 1;
+	map_draw(game);
 }
