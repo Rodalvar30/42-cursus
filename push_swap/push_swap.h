@@ -5,38 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 19:05:33 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/12/07 19:05:33 by rodalvar         ###   ########.fr       */
+/*   Created: 2023/01/25 12:39:21 by rodalvar          #+#    #+#             */
+/*   Updated: 2023/01/25 18:09:49 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
-# include <stdlib.h>
-
-typedef struct s_push
+# include "./mega_libft/libft/libft.h"
+//value(El entero que debemos ordenar)
+//index(Es el indice en la lista de todos los valores que debemos ordenar)
+//pos(Es la actual posicion en el stack)
+//target_pos(Para los elementos del stack b, 
+//es su posicion correcta en el stack a)
+//cost_a(Es el precio de rotar el stack a para que el elemento llegue 
+//a la posicion asignada al top del stack a)
+//cost_b(Es el precio de rotar el stack b para que el elemento llegue 
+//a la posicion asignada al top del stack b)
+// next (Es el puntero del siguiente elemento de la lista)
+typedef struct s_stack
 {
-	size_t na;
-	size_t nb;
-} t_push;
+	int				value;
+	int				index;
+	int				pos;
+	int				target_pos;
+	int				cost_a;
+	int				cost_b;
+	struct s_stack	*next;
+}	t_stack;
 
-void	swap(int *a, int *b);
-void	sa(int a[]);
-void	sb(int b[]);
-void	ss(int a[], int b[]);
-void	ra(int a[], size_t na);
-void	rb(int b[], size_t nb);
-void	rr(int a[], int b[], size_t na, size_t nb);
-void	rra(int a[], size_t na);
-void	rrb(int b[], size_t nb);
-void	rrr(int a[], int b[], size_t na, size_t nb);
-void	pa(t_push *push, int a[], int b[]);
-void	pb(t_push *push, int a[], int b[]);
-int		ft_atoi(char *str);
+typedef t_stack	*t_point;
 
+void	insert_value(t_point *a, int n);
+void	print_value(t_point a);
+void	free_value(t_point *p);
+int		check_doubles(t_stack *a);
+int		check_doubles2(t_stack *a);
 
-
-
-#endif
+#endif 
