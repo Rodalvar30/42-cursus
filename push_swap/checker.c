@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 17:04:41 by rodalvar          #+#    #+#             */
-/*   Updated: 2023/01/25 18:36:25 by rodalvar         ###   ########.fr       */
+/*   Updated: 2023/02/13 18:51:50 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int	check_doubles(t_stack *a)
 	while (second)
 	{
 		if (first->value == second->value)
-			return (0);
+			return (1);
 		first = first -> next;
 		second = second->next;
 	}
-	return (1);
+	return (0);
 }
 
 int	check_doubles2(t_stack *a)

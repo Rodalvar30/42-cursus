@@ -6,7 +6,7 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 12:39:21 by rodalvar          #+#    #+#             */
-/*   Updated: 2023/01/25 18:09:49 by rodalvar         ###   ########.fr       */
+/*   Updated: 2023/02/13 21:21:38 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_stack
 	int				cost_a;
 	int				cost_b;
 	struct s_stack	*next;
+	struct s_stack	*back;
 }	t_stack;
 
 typedef t_stack	*t_point;
@@ -42,5 +43,13 @@ void	print_value(t_point a);
 void	free_value(t_point *p);
 int		check_doubles(t_stack *a);
 int		check_doubles2(t_stack *a);
+void	init_stack(t_point a);
+void	ft_print_index(t_point a);
+int		ft_max(t_point a);
+int		ft_min(t_point a);
+void	ft_fill_array(int p[], char **argv, int i);
+void	ft_order(int p[], int n);
+void	ft_index(t_point a, int p[], int n);
+void	ft_stack(t_stack *a, int argc, char **argv);
 
 #endif 

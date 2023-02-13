@@ -6,36 +6,39 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 12:55:34 by rodalvar          #+#    #+#             */
-/*   Updated: 2023/01/25 18:19:36 by rodalvar         ###   ########.fr       */
+/*   Updated: 2023/02/13 21:19:00 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_stack(t_stack *a, int argc, char **argv)
 {
-	t_stack	*a;
 	int		i;
+	int		*p;
 
-	a = NULL;
+	p = malloc((argc - 1) * sizeof(int));
 	i = argc - 1;
 	if (argc > 1)
 	{	
 		while (i > 0)
 		{
+			init_stack(a);
 			insert_value(&a, ft_atoi(&argv[i][0]));
 			i--;
 		}
-		print_value(a);
-		if (check_doubles2(a) == 0)
-			ft_printf("No hay repetidos\n");
-		else if (check_doubles2(a) == 1)
-			ft_printf("Hay repetidos\n");
-		free_value(&a);
-		ft_printf("Se ha liberado el stack");
+		if (check_doubles2(a) == 0 && check_doubles(a) == 0)
+		{
+			print_value(a);
+			ft_fill_array(p, argv, argc - 1);
+			ft_order(p, argc - 1);
+			ft_index(a, p, argc - 1);
+			ft_print_index(a);
+		}
+		else
+		{
+			free_value(&a);
+			ft_printf("Syntax_Error");
+		}
 	}
-	else
-		ft_printf("Error Invalid Syntax");
-	return (0);
 }
-

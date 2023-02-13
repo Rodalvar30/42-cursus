@@ -1,4 +1,4 @@
-SRCS = filling_stack.c utils.c checker.c
+SRCS = filling_stack.c utils.c checker.c index.c moves.c main.c
 OBJS = $(SRCS:.c=.o)
 NAME = push_swap
 LIBFT = ./mega_libft/libft/libft.a
