@@ -3,52 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: rodalvar <rodalvar@student.42.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/07 19:03:09 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/12/07 19:03:09 by rodalvar         ###   ########.fr       */
+/*   Created: 2023/02/13 18:03:47 by rodalvar          #+#    #+#             */
+/*   Updated: 2023/02/19 16:51:16 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static void	push_swap(t_stack **a, t_stack **b, int a_size)
+{
+	if (a_size == 2 && !ft_already_order(*a))
+		sa(*a);
+	else if (a_size == 3)
+		sort_three(a);
+	else if (a_size > 3 && !ft_already_order(*a))
+		sort(a, b);
+}
+
 int	main(int argc, char **argv)
 {
-	t_push push;
-	int	i;
-	int j;
-	int *a;
-	int	*b;
+	t_stack	*a;
+	t_stack *b;
+	int		a_size;
 
-	push.na = argc - 1;
-	push.nb = argc - 1;
-	a = (int *)malloc((push.na + push.nb)*sizeof(int));
-	b = (int *)malloc((push.na + push.nb)*sizeof(int));
-	if(argc > 1)
+	if(checker_input(argv, argc) == 0)
 	{
-		i = 0;
-		j = 1;
-		while (j < argc)
-		{
-			a[i] = ft_atoi(&argv[j][0]);
-			b[i] = ft_atoi(&argv[j][0]);
-			i++;
-			j++;
-		}
-		i = 0;
-		while ((size_t)i < push.na)
-		{
-			printf("%d\n", a[i]);
-			i++;
-		}
-		i = 0;
-		while ((size_t)i < push.nb)
-		{
-			printf("      %d\n", b[i]);
-			i++;
-		}
+		ft_printf("PUTO\n");
+		exit(1);
 	}
-	else
-		printf("Error Syntax Invalid\n");
+	a = NULL;
+	if (argc > 1)
+	{
+		b = NULL;
+		a = fill_stack_values(argc, argv);
+		a_size = stack_size(a);
+		push_swap(&a, &b, a_size);
+		print_value(a);
+		ft_print_index(a);
+		free_value(&a);
+	}
 	return (0);
 }
