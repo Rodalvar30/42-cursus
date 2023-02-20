@@ -6,10 +6,10 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 15:59:12 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/09/20 15:59:12 by rodalvar         ###   ########.fr       */
+/*   Updated: 2023/02/20 21:46:19 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+
 
 int	ft_isprint(int c)
 {

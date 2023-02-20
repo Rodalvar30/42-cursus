@@ -6,7 +6,7 @@ LIBFT = ./libraries/libft/libft.a
 
 OBJS=$(SRCS:.c=.o)
 OBJS_BONUS =$(SRCS_BONUS:.c=.o)
-NAME= so_longs
+NAME= so_long
 
 HEADER = ./sources/so_long.h
 CC = gcc

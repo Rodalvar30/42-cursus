@@ -6,10 +6,10 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 15:58:10 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/09/20 15:58:10 by rodalvar         ###   ########.fr       */
+/*   Updated: 2023/02/20 21:45:24 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+
 
 size_t	ft_strlen(const char *str)
 {

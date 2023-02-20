@@ -77,5 +77,18 @@ void	sort_three(t_stack **a);
 int		ft_already_order(t_stack *a);
 void	sort(t_stack **a, t_stack **b);
 
+void	insert_value(t_point *a, int n);
+void	print_value(t_point a);
+void	free_value(t_point *p);
+int		check_doubles(t_stack *a);
+int		check_doubles2(t_stack *a);
+void	init_stack(t_point a);
+void	ft_print_index(t_point a);
+int		ft_max(t_point a);
+int		ft_min(t_point a);
+void	ft_fill_array(int p[], char **argv, int i);
+void	ft_order(int p[], int n);
+void	ft_index(t_point a, int p[], int n);
+void	ft_stack(t_stack *a, int argc, char **argv);
 
 #endif 

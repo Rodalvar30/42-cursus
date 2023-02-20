@@ -6,10 +6,10 @@
 /*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 15:58:50 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/09/20 15:58:50 by rodalvar         ###   ########.fr       */
+/*   Updated: 2023/02/20 21:45:13 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+
 
 void	*ft_memset(void *str, int c, size_t n)
 {

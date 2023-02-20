@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rodalvar <rodalvar@student.42.com>         +#+  +:+       +#+        */
+/*   By: rodalvar <rodalvar@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:06:08 by rodalvar          #+#    #+#             */
-/*   Updated: 2022/10/12 10:06:08 by rodalvar         ###   ########.fr       */
+/*   Updated: 2023/02/20 21:44:58 by rodalvar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
