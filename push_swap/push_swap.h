@@ -22,6 +22,17 @@ typedef struct s_push
 	size_t nb;
 } t_push;
 
+typedef struct s_stack
+{
+	int value;
+	int index;
+	int pos;
+	int target_pos;
+	int cost_a;
+	int cost_b;
+	struct s_stack *next;
+} t_stack;
+
 void	swap(int *a, int *b);
 void	sa(int a[]);
 void	sb(int b[]);
